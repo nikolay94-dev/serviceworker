@@ -1,5 +1,4 @@
 firebase.initializeApp({
-    //messagingSenderId: '448358493027'
     messagingSenderId: '231477857272'
 });
 
@@ -183,7 +182,6 @@ function getToken() {
 
 
 function sendNotification(notification) {
-    //var key = 'AAAAaGQ_q2M:APA91bGCEOduj8HM6gP24w2LEnesqM2zkL_qx2PJUSBjjeGSdJhCrDoJf_WbT7wpQZrynHlESAoZ1VHX9Nro6W_tqpJ3Aw-A292SVe_4Ho7tJQCQxSezDCoJsnqXjoaouMYIwr34vZTs';
     var key = 'AAAANeUny_g:APA91bEEsZxQdI3b939hCkGhX-wHXS6cTtt95il-p6csm7zfPu9dGGBd8T0FIaa5MuZ1NK_6WUbhpBeVOU7I3h4n49INQS_6OC6Lovupu8_AvUA4t3KX1VPAIcvc01Idhl2iYhlrtHjg';
 
     console.log('Send notification', notification);
