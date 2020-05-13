@@ -5,7 +5,7 @@ firebase.initializeApp({
 
 var bt_register = $('#register');
 //var bt_delete = $('#delete');
-//var token = $('#token');
+var token = $('#token');
 var form = $('#notification');
 var massage_id = $('#massage_id');
 var massage_row = $('#massage_row');
