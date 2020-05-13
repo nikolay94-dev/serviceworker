@@ -5,7 +5,7 @@ firebase.initializeApp({
 
 var bt_register = $('#register');
 //var bt_delete = $('#delete');
-var token = $('#token');
+//var token = $('#token');
 var form = $('#notification');
 var massage_id = $('#massage_id');
 var massage_row = $('#massage_row');
@@ -253,14 +253,14 @@ function setTokenSentToServer(currentToken) {
 
 function updateUIForPushEnabled(currentToken) {
     console.log(currentToken);
-    token.text(currentToken);
+    //token.text(currentToken);
     bt_register.hide();
     //bt_delete.show();
     form.show();
 }
 
 function resetUI() {
-    token.text('');
+    //token.text('');
     bt_register.show();
     //bt_delete.hide();
     form.hide();
