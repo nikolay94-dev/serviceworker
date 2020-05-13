@@ -78,11 +78,10 @@ if (
         event.preventDefault();
 
         var notification = {};
-/*        form.find('input').each(function () {
+        form.find('input').each(function () {
             var input = $(this);
             notification[input.attr('name')] = input.val();
-        });*/
-        notification = 'Test notification';
+        });
 
         sendNotification(notification);
     });
