@@ -3,8 +3,8 @@ firebase.initializeApp({
 });
 
 
-//var bt_register = $('#register');
-var bt_delete = $('#delete');
+var bt_register = $('#register');
+//var bt_delete = $('#delete');
 var token = $('#token');
 var form = $('#notification');
 var massage_id = $('#massage_id');
@@ -19,7 +19,6 @@ var alert_message = $('#alert-message');
 var input_body = $('#body');
 var timerId = setInterval(setNotificationDemoBody, 10000);
 
-getToken();
 function setNotificationDemoBody() {
     if (input_body.val().search(/^It's found today at \d\d:\d\d$/i) !== -1) {
         var now = new Date();
@@ -51,11 +50,11 @@ if (
     }
 
     // get permission on subscribe only once
-/*    bt_register.on('click', function() {
+    bt_register.on('click', function() {
         getToken();
-    });*/
+    });
 
-    bt_delete.on('click', function() {
+/*    bt_delete.on('click', function() {
         // Delete Instance ID token.
         messaging.getToken()
             .then(function(currentToken) {
@@ -73,7 +72,7 @@ if (
             .catch(function(error) {
                 showError('Error retrieving Instance ID token', error);
             });
-    });
+    });*/
 
     form.on('submit', function(event) {
         event.preventDefault();
@@ -255,25 +254,22 @@ function setTokenSentToServer(currentToken) {
 function updateUIForPushEnabled(currentToken) {
     console.log(currentToken);
     token.text(currentToken);
-    //bt_register.hide();
-    bt_delete.show();
+    bt_register.hide();
+    //bt_delete.show();
     form.show();
 }
 
 function resetUI() {
-/*    token.text('');
+    token.text('');
     bt_register.show();
-    bt_delete.hide();
+    //bt_delete.hide();
     form.hide();
     massage_row.hide();
-    info.hide();*/
-    console.log(currentToken);
-    token.text(currentToken);
-    bt_delete.show();
-    form.show();
+    info.hide();
 }
 
 function updateUIForPushPermissionRequired() {
+    bt_register.attr('disabled', 'disabled');
     resetUI();
 }
 
