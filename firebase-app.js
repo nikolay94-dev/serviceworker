@@ -183,7 +183,7 @@ function getToken() {
 
 function sendNotification(notification) {
     var key = 'AAAAR6ILj4A:APA91bH1_dcLcdMOgOYlI-2PG4luFbRpD1fO8xudv_4OKkZYw8rOpjZbOdFk0om07cz1w-6PjhmKgSUAZkKmgClqGoa5gjodc0CXUrl889tcRwgnd6nnVxZVmMv0HFzwK1NnX4fVUxDQ';
-alert('Hello firebase-app')
+
     console.log('Send notification', notification);
 
     // hide last notification data
