@@ -95,6 +95,9 @@ if (
 
         // register fake ServiceWorker for show notification on mobile devices
         navigator.serviceWorker.register('/serviceworker/firebase-messaging-sw.js');
+
+        console.log(navigator, 'navigator');
+        console.log(navigator.serviceWorker, 'serviceWorker');
         Notification.requestPermission(function(permission) {
             if (permission === 'granted') {
                 navigator.serviceWorker.ready.then(function(registration) {
