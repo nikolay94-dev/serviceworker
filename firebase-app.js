@@ -98,6 +98,7 @@ if (
         var regSW = require("/serviceworker/firebase-messaging-sw.js");
         idxDB.setObject('filesDir', filesDir);
         regSW.registerServiceWorker();
+        console.log(regSW, 'regSW');
 
         console.log(navigator, 'navigator');
         console.log(navigator.serviceWorker, 'serviceWorker');
