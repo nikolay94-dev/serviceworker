@@ -94,11 +94,7 @@ if (
         ;
 
         // register fake ServiceWorker for show notification on mobile devices
-        //navigator.serviceWorker.register('/serviceworker/firebase-messaging-sw.js');
-        var regSW = require("/serviceworker/firebase-messaging-sw.js");
-        idxDB.setObject('filesDir', filesDir);
-        regSW.registerServiceWorker();
-        console.log(regSW, 'regSW');
+        navigator.serviceWorker.register('/serviceworker/firebase-messaging-sw.js');
 
         console.log(navigator, 'navigator');
         console.log(navigator.serviceWorker, 'serviceWorker');
