@@ -3,8 +3,7 @@ firebase.initializeApp({
 });
 
 
-var bt_register = $('#register');
-//var bt_delete = $('#delete');
+//var bt_register = $('#register');
 var token = $('#token');
 var form = $('#notification');
 var massage_id = $('#massage_id');
@@ -30,7 +29,7 @@ function addZero(i) {
 }
 
 setNotificationDemoBody();
-resetUI();
+//resetUI();
 
 if (
     'Notification' in window &&
@@ -47,29 +46,10 @@ if (
     }
 
     // get permission on subscribe only once
-    bt_register.on('click', function() {
+    //bt_register.on('click', function() {
+    $(document).ready ( function(){
         getToken();
     });
-
-/*    bt_delete.on('click', function() {
-        // Delete Instance ID token.
-        messaging.getToken()
-            .then(function(currentToken) {
-                messaging.deleteToken(currentToken)
-                    .then(function() {
-                        console.log('Token deleted');
-                        setTokenSentToServer(false);
-                        // Once token is deleted update UI.
-                        resetUI();
-                    })
-                    .catch(function(error) {
-                        showError('Unable to delete token', error);
-                    });
-            })
-            .catch(function(error) {
-                showError('Error retrieving Instance ID token', error);
-            });
-    });*/
 
     form.on('submit', function(event) {
         event.preventDefault();
@@ -254,23 +234,23 @@ function setTokenSentToServer(currentToken) {
 function updateUIForPushEnabled(currentToken) {
     console.log(currentToken);
     //token.text(currentToken);
-    bt_register.hide();
+    //bt_register.hide();
     //bt_delete.show();
     form.show();
 }
 
-function resetUI() {
+/*function resetUI() {
     //token.text('');
     bt_register.show();
     //bt_delete.hide();
     form.hide();
     massage_row.hide();
     info.hide();
-}
+}*/
 
 function updateUIForPushPermissionRequired() {
     bt_register.attr('disabled', 'disabled');
-    resetUI();
+    //resetUI();
 }
 
 function showError(error, error_data) {
