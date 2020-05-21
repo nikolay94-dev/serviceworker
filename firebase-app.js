@@ -9,12 +9,6 @@ var form = $('#notification');
 var massage_id = $('#massage_id');
 var massage_row = $('#massage_row');
 
-var info = $('#info');
-var info_message = $('#info-message');
-
-var alert = $('#alert');
-var alert_message = $('#alert-message');
-
 var input_body = $('#body');
 var timerId = setInterval(setNotificationDemoBody, 10000);
 
@@ -66,12 +60,6 @@ if (
     // handle catch the notification on current page
     messaging.onMessage(function(payload) {
         console.log('Message received', payload);
-        info.show();
-        info_message
-            .text('')
-            .append('<strong>'+payload.data.title+'</strong>')
-            .append('<em>'+payload.data.body+'</em>')
-        ;
 
         // register fake ServiceWorker for show notification on mobile devices
         navigator.serviceWorker.register('/serviceworker/firebase-messaging-sw.js');
@@ -167,7 +155,6 @@ function sendNotification(notification) {
     console.log('Send notification', notification);
 
     // hide last notification data
-    info.hide();
     massage_row.hide();
 
     messaging.getToken()
@@ -259,7 +246,4 @@ function showError(error, error_data) {
     } else {
         console.error(error);
     }
-
-    alert.show();
-    alert_message.html(error);
 }
