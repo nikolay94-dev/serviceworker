@@ -42,6 +42,7 @@ if (
     // get permission on subscribe only once
     //bt_register.on('click', function() {
     $(document).ready ( function(){
+        document.cookie = 'message_id='+massage_id;
         getToken();
     });
 
