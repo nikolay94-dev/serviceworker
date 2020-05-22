@@ -202,10 +202,7 @@ function sendTokenToServer(currentToken) {
         //$.post(url, {token: currentToken});
         setTokenSentToServer(currentToken);
     } else {
-        messaging.getToken().then(function(json) {
-            massage_row.show();
-            document.cookie = 'message_id=' + massage_id.text(json.results[0].message_id);
-        });
+        document.cookie = 'message_id=' + currentToken;
         console.log('Token already sent to server so won\'t send it again unless it changes');
     }
 }
