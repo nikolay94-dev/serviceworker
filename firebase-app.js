@@ -72,7 +72,7 @@ if (
                   // Copy data object to get parameters in the click handler
                   console.log('payload data', payload.data);
                   payload.data.data = JSON.parse(JSON.stringify(payload.data));
-
+                  console.log('payload data json', payload.data);
                   registration.showNotification(payload.data.title, payload.data);
                 }).catch(function(error) {
                     // registration failed :(
